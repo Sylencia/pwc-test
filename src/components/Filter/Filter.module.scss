@@ -1,15 +1,8 @@
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.input {
+.filter {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
-
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .heading {

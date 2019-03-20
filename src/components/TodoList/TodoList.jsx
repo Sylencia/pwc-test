@@ -2,48 +2,42 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import { Todo } from '../Todo'
-import { Filter } from '../Filter'
+import { getFilteredTodos, getTotalTodos, getCompletedTodos } from '../../utils'
+import styles from './TodoList.module.scss'
 
 export const TodoList = ({
   todos,
-  totalTodoCount,
-  completedTodoCount,
-  sortOrder,
-  showCompleted,
-  setSortOrder,
-  setShowCompleted,
   deleteTodo,
   completeTodo,
-}) => (
-  <Fragment>
-    <Filter
-      sortOrder={sortOrder}
-      showCompleted={showCompleted}
-      setSortOrder={setSortOrder}
-      setShowCompleted={setShowCompleted}
-    />
-    {todos.map(todo => (
-      <Todo
-        key={todo.id}
-        todo={todo}
-        deleteTodo={deleteTodo}
-        completeTodo={completeTodo}
-      />
-    ))}
-    <p>
-      Completed todos: {completedTodoCount} / Total todos: {totalTodoCount}
-    </p>
-  </Fragment>
-)
+  sortOrder,
+  showCompleted,
+}) => {
+  const filteredTodos = getFilteredTodos(todos, sortOrder, showCompleted)
+  const totalTodoCount = getTotalTodos(todos)
+  const completedTodoCount = getCompletedTodos(todos)
+
+  return (
+    <Fragment>
+      <h4 className={styles.heading}>Todo list</h4>
+      {filteredTodos.map(todo => (
+        <Todo
+          key={todo.id}
+          todo={todo}
+          deleteTodo={deleteTodo}
+          completeTodo={completeTodo}
+        />
+      ))}
+      <p>
+        Completed todos: {completedTodoCount} / Total todos: {totalTodoCount}
+      </p>
+    </Fragment>
+  )
+}
 
 TodoList.propTypes = {
   todos: PropTypes.array.isRequired,
-  totalTodoCount: PropTypes.number.isRequired,
-  completedTodoCount: PropTypes.number.isRequired,
-  sortOrder: PropTypes.string.isRequired,
-  showCompleted: PropTypes.bool.isRequired,
-  setSortOrder: PropTypes.func.isRequired,
-  setShowCompleted: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired,
   completeTodo: PropTypes.func.isRequired,
+  sortOrder: PropTypes.string.isRequired,
+  showCompleted: PropTypes.bool.isRequired,
 }

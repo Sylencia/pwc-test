@@ -38,5 +38,6 @@ export const getFilteredTodos = (todos, sortOrder, showCompleted) => {
 
   const sortFunction =
     sortOrder === 'priority' ? sortTodosByPriority : sortTodosByText
+
   return filteredTodos.sort(sortFunction)
 }

@@ -4,15 +4,21 @@ import { ActionTypes } from '../actions'
 const defaultState = [
   {
     id: 'test',
-    text: 'test',
+    text: 'first task',
     priority: 1,
     isCompleted: false,
   },
   {
     id: '2',
-    text: 'test complete',
-    priority: 1,
+    text: 'completed task',
+    priority: 2,
     isCompleted: true,
+  },
+  {
+    id: '3',
+    text: 'low priority task',
+    priority: 3,
+    isCompleted: false,
   },
 ]
 
