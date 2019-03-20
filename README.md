@@ -7,6 +7,8 @@ yarn install
 yarn start
 ```
 
+The app has three tasks preloaded in the state to give a quick look at how each state looks.
+
 ## To test:
 
 ```

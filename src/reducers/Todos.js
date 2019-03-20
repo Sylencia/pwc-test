@@ -3,7 +3,7 @@ import { ActionTypes } from '../actions'
 
 const defaultState = [
   {
-    id: 'test',
+    id: '1',
     text: 'first task',
     priority: 1,
     isCompleted: false,
