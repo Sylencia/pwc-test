@@ -1,11 +1,11 @@
 import shortid from 'shortid'
-import { ActionTypes } from 'src/actions'
+import { ActionTypes } from '../actions'
 
 const defaultState = [
   {
     id: 'test',
     text: 'test',
-    priority: 0,
+    priority: 1,
     isCompleted: false,
   },
 ]
@@ -22,10 +22,10 @@ export default (state = defaultState, action) => {
         isCompleted: false,
       }
 
-      return {
-        ...state,
-        newTodo,
-      }
+      return [...state, newTodo]
+    }
+    default: {
+      return state
     }
   }
 }
