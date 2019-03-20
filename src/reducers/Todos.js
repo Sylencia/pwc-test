@@ -8,6 +8,12 @@ const defaultState = [
     priority: 1,
     isCompleted: false,
   },
+  {
+    id: '2',
+    text: 'test complete',
+    priority: 1,
+    isCompleted: true,
+  },
 ]
 
 export default (state = defaultState, action) => {
