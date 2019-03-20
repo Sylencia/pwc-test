@@ -1,28 +1,17 @@
-import shortid from 'shortid'
 import { ActionTypes } from '../actions'
 
-const defaultState = [
-  {
-    id: 'test',
-    text: 'test',
-    priority: 1,
-    isCompleted: false,
-  },
-]
+const defaultState = {
+  sortOrder: 'name',
+  showCompleted: true,
+}
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case ActionTypes.ADD_TODO: {
-      // id must be unique, thus it is generated from a library
-      // By default, isCompleted should be false as a new todo won't be added in a complete state
-      const newTodo = {
-        id: shortid.generate(),
-        text: action.text,
-        priority: action.priority,
-        isCompleted: false,
-      }
-
-      return [...state, newTodo]
+    case ActionTypes.SET_SORT_ORDER: {
+      return { ...state, sortOrder: action.order }
+    }
+    case ActionTypes.SET_SHOW_COMPLETED: {
+      return { ...state, showCompleted: action.showCompleted }
     }
     default: {
       return state
