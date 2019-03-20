@@ -1,3 +1,10 @@
 export const ActionTypes = {
+  // Todo Actions
   ADD_TODO: 'ADD_TODO',
+  DELETE_TODO: 'DELETE_TODO',
+  COMPLETE_TODO: 'COMPLETE_TODO',
+
+  // Filter Actions
+  SET_SORT_ORDER: 'SET_SORT_ORDER',
+  SET_SHOW_COMPLETED: 'SET_SHOW_COMPLETED',
 }
