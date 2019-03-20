@@ -1,0 +1,26 @@
+.todoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  margin-top: 32px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  margin: auto 16px auto 0;
+  border-radius: 50%;
+}
+
+.highPriority {
+  background-color: red;
+}
+
+.mediumPriority {
+  background-color: yellow;
+}
+
+.lowPriority {
+  background-color: gray;
+}

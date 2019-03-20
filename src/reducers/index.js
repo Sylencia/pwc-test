@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import todos from './Todos'
 
-const todoReducers = combineReducers({
+const rootReducer = combineReducers({
   todos,
 })
 
-export default todoReducers
+export default rootReducer

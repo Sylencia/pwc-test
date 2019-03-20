@@ -3,7 +3,7 @@ import { addTodo } from '../actions'
 import { AddTodo } from '../components/AddTodo'
 
 const mapDispatchToProps = dispatch => ({
-  addTodo: text => dispatch(addTodo(text, 1)),
+  addTodo: (text, priority) => dispatch(addTodo(text, priority)),
 })
 
 export default connect(
