@@ -3,7 +3,39 @@
   flex-direction: row;
   justify-content: flex-start;
 
-  margin-top: 32px;
+  &:not(:first-of-type) {
+    margin-top: 16px;
+  }
+}
+
+.textContainer {
+  width: 100%;
+  text-align: left;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+// Style the buttons so that they just look like text
+.textButton {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  color: blue;
+
+  &:not(:last-of-type) {
+    margin-right: 8px;
+  }
+}
+
+.options {
+  font-size: 12px;
 }
 
 .dot {
@@ -14,13 +46,17 @@
 }
 
 .highPriority {
-  background-color: red;
+  background-color: #f93822;
 }
 
 .mediumPriority {
-  background-color: yellow;
+  background-color: #ed8b00;
 }
 
 .lowPriority {
-  background-color: gray;
+  background-color: #78bd70;
+}
+
+.tick {
+  color: green;
 }

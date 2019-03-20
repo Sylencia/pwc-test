@@ -1,5 +1,10 @@
 import { connect } from 'react-redux'
-import { setSortOrder, setShowCompleted } from '../actions'
+import {
+  setSortOrder,
+  setShowCompleted,
+  deleteTodo,
+  completeTodo,
+} from '../actions'
 import { TodoList } from '../components/TodoList'
 import { getTotalTodos, getCompletedTodos, getFilteredTodos } from '../utils'
 
@@ -18,6 +23,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setSortOrder: order => dispatch(setSortOrder(order)),
   setShowCompleted: show => dispatch(setShowCompleted(show)),
+  deleteTodo: id => dispatch(deleteTodo(id)),
+  completeTodo: id => dispatch(completeTodo(id)),
 })
 
 export default connect(

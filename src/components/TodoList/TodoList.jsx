@@ -12,6 +12,8 @@ export const TodoList = ({
   showCompleted,
   setSortOrder,
   setShowCompleted,
+  deleteTodo,
+  completeTodo,
 }) => (
   <Fragment>
     <Filter
@@ -21,7 +23,12 @@ export const TodoList = ({
       setShowCompleted={setShowCompleted}
     />
     {todos.map(todo => (
-      <Todo key={todo.id} todo={todo} />
+      <Todo
+        key={todo.id}
+        todo={todo}
+        deleteTodo={deleteTodo}
+        completeTodo={completeTodo}
+      />
     ))}
     <p>
       Completed todos: {completedTodoCount} / Total todos: {totalTodoCount}
@@ -37,4 +44,6 @@ TodoList.propTypes = {
   showCompleted: PropTypes.bool.isRequired,
   setSortOrder: PropTypes.func.isRequired,
   setShowCompleted: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
+  completeTodo: PropTypes.func.isRequired,
 }
