@@ -12,12 +12,6 @@ module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 8,
-    ecmaFeatures: {
-      impliedStrict: true,
-      jsx: true,
-      experimentalObjectRestSpread: true,
-    },
   },
   plugins: ['prettier', 'react', 'standard'],
   extends: [
@@ -26,13 +20,6 @@ module.exports = {
     'plugin:react/recommended',
     'standard',
   ],
-  settings: {
-    'import/resolver': {
-      node: {
-        moduleDirectory: ['node_modules', 'src/js'],
-      },
-    },
-  },
   rules: {
     'comma-dangle': [ERROR, 'always-multiline'],
     'react/jsx-pascal-case': OFF,
@@ -40,5 +27,10 @@ module.exports = {
     'space-before-function-paren': OFF,
     'react/jsx-filename-extension': OFF,
     'prettier/prettier': 'error',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 }
